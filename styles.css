@@ -1,0 +1,98 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121214;
+    color: #e1e1e6;
+    margin: 0;
+    padding: 20px;
+}
+header h1 {
+    text-align: center;
+    color: #04d361;
+}
+.metrics-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+.card {
+    background: #202024;
+    padding: 20px;
+    border-radius: 8px;
+    width: 40%;
+    text-align: center;
+    border-left: 5px solid #04d361;
+}
+.card p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+.office-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.room-box {
+    background: #202024;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #29292e;
+}
+.device-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+.device-item {
+    background: #29292e;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+/* Glow Effect for Lights */
+.device-item.light.on {
+    background: #f1c40f;
+    color: #121214;
+    box-shadow: 0 0 15px #f1c40f;
+    font-weight: bold;
+}
+
+/* Spin Animation for Fans */
+.device-item.fan.on {
+    background: #3498db;
+    color: #fff;
+    box-shadow: 0 0 15px #3498db;
+    font-weight: bold;
+    position: relative;
+}
+.device-item.fan.on::before {
+    content: "🌀 ";
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.alerts-panel {
+    background: #202024;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #a83a3a;
+}
+.alert-item {
+    background: #2c1d1d;
+    border-left: 5px solid #e74c3c;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+.no-alerts {
+    color: #7c7c8a;
+}

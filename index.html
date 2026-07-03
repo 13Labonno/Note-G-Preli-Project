@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Electricity Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>⚡ Smart Office Energy Dashboard</h1>
+    </header>
+
+    <main>
+        <section class="metrics-container">
+            <div class="card">
+                <h3>Total Office Power</h3>
+                <p id="total-power">0 W</p>
+            </div>
+            <div class="card">
+                <h3>Daily Est. Usage</h3>
+                <p id="daily-kwh">0 kWh</p>
+            </div>
+        </section>
+
+        <h2>Office Layout & Live Status</h2>
+        <section class="office-layout">
+            <div class="room-box" id="room-drawing">
+                <h3>Drawing Room (<span id="pow-drawing">0</span>W)</h3>
+                <div class="device-grid" id="devices-drawing"></div>
+            </div>
+            <div class="room-box" id="room-work1">
+                <h3>Work Room 1 (<span id="pow-work1">0</span>W)</h3>
+                <div class="device-grid" id="devices-work1"></div>
+            </div>
+            <div class="room-box" id="room-work2">
+                <h3>Work Room 2 (<span id="pow-work2">0</span>W)</h3>
+                <div class="device-grid" id="devices-work2"></div>
+            </div>
+        </section>
+
+        <h2>Active Alerts</h2>
+        <section class="alerts-panel" id="alerts-list">
+            <p class="no-alerts">No anomalies detected. System normal.</p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
