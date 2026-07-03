@@ -35,7 +35,7 @@ Create a `.env` file inside the root of your project directory before initializi
 ```env
 PORT=5000
 DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN_HERE
-GEMINI_API_KEY=YOUR_GOOGLE_GEMINI_API_KEY_HERE
+
 
 
 ### 1. Launching Backend API & Telemetry Simulator
