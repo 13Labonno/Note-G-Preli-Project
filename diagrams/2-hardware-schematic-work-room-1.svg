@@ -1,0 +1,178 @@
+<svg viewBox="0 0 1300 980" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="1300" height="980" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="650" y="35" font-size="22" font-weight="bold" text-anchor="middle" fill="#111111">Hardware / Electrical Schematic — Representative Room (Work Room 1)</text>
+  <text x="650" y="55" font-size="12" text-anchor="middle" fill="#555555">ESP32 + 5-channel Relay Module + ACS712 Current Sensor — 2 Fans, 3 Lights (concept for Wokwi/Tinkercad)</text>
+
+  <!-- ============ ESP32 BLOCK ============ -->
+  <rect x="70" y="110" width="160" height="360" rx="8" fill="#eef4ff" stroke="#3b5bdb" stroke-width="2"/>
+  <text x="150" y="135" font-size="14" font-weight="bold" text-anchor="middle" fill="#1a1a1a">ESP32 Dev Board</text>
+  <text x="150" y="150" font-size="9" text-anchor="middle" fill="#666666">(microcontroller)</text>
+
+  <!-- ESP32 pin labels -->
+  <text x="85" y="175" font-size="10" fill="#333333">3V3</text>
+  <text x="85" y="195" font-size="10" fill="#333333">5V (VIN)</text>
+  <text x="85" y="215" font-size="10" fill="#333333">GND</text>
+  <line x1="60" y1="230" x2="240" y2="230" stroke="#cccccc" stroke-width="1"/>
+  <text x="85" y="250" font-size="10" fill="#333333">GPIO23 →</text>
+  <text x="85" y="268" font-size="10" fill="#333333">GPIO22 →</text>
+  <text x="85" y="286" font-size="10" fill="#333333">GPIO21 →</text>
+  <text x="85" y="304" font-size="10" fill="#333333">GPIO19 →</text>
+  <text x="85" y="322" font-size="10" fill="#333333">GPIO18 →</text>
+  <line x1="60" y1="335" x2="240" y2="335" stroke="#cccccc" stroke-width="1"/>
+  <text x="85" y="358" font-size="10" fill="#333333">GPIO34 (ADC1_CH6)</text>
+  <text x="85" y="374" font-size="9" fill="#777777">← analog in (current sense)</text>
+  <line x1="60" y1="390" x2="240" y2="390" stroke="#cccccc" stroke-width="1"/>
+  <text x="85" y="412" font-size="10" fill="#333333">USB / Wi-Fi</text>
+  <text x="85" y="428" font-size="9" fill="#777777">sends readings to</text>
+  <text x="85" y="442" font-size="9" fill="#777777">Backend API over Wi-Fi</text>
+
+  <!-- ============ RELAY MODULE BLOCK ============ -->
+  <rect x="330" y="150" width="190" height="260" rx="8" fill="#fff0f0" stroke="#e03131" stroke-width="2"/>
+  <text x="425" y="175" font-size="14" font-weight="bold" text-anchor="middle" fill="#1a1a1a">5-Channel Relay Module</text>
+  <text x="425" y="190" font-size="9" text-anchor="middle" fill="#666666">(opto-isolated, active-LOW typical)</text>
+
+  <text x="345" y="212" font-size="10" fill="#333333">VCC</text>
+  <text x="345" y="228" font-size="10" fill="#333333">GND</text>
+  <line x1="335" y1="238" x2="510" y2="238" stroke="#cccccc" stroke-width="1"/>
+  <text x="345" y="258" font-size="10" fill="#333333">IN1 → Light 1</text>
+  <text x="345" y="276" font-size="10" fill="#333333">IN2 → Light 2</text>
+  <text x="345" y="294" font-size="10" fill="#333333">IN3 → Light 3</text>
+  <text x="345" y="312" font-size="10" fill="#333333">IN4 → Fan 1</text>
+  <text x="345" y="330" font-size="10" fill="#333333">IN5 → Fan 2</text>
+  <text x="345" y="352" font-size="9" fill="#777777">Each channel: COM/NO wired</text>
+  <text x="345" y="366" font-size="9" fill="#777777">in series with the LIVE wire</text>
+  <text x="345" y="380" font-size="9" fill="#777777">of that load</text>
+  <text x="345" y="398" font-size="9" fill="#c92a2a" font-weight="bold">⚠ Mains side: licensed electrician</text>
+
+  <!-- ============ ACS712 BLOCK ============ -->
+  <rect x="330" y="440" width="190" height="120" rx="8" fill="#eafaf0" stroke="#2f9e44" stroke-width="2"/>
+  <text x="425" y="463" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a1a">ACS712 (30A) Current Sensor</text>
+  <text x="345" y="484" font-size="10" fill="#333333">VCC → ESP32 5V</text>
+  <text x="345" y="500" font-size="10" fill="#333333">GND → ESP32 GND</text>
+  <text x="345" y="516" font-size="10" fill="#333333">OUT → ESP32 GPIO34</text>
+  <text x="345" y="536" font-size="9" fill="#777777">Placed in series with room's</text>
+  <text x="345" y="550" font-size="9" fill="#777777">main LIVE feed (whole-room draw)</text>
+
+  <!-- ============ AC MAINS / LOADS ============ -->
+  <rect x="600" y="110" width="220" height="70" rx="6" fill="#fffbe6" stroke="#e0a800" stroke-width="1.5"/>
+  <text x="710" y="132" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a1a">AC Mains Supply</text>
+  <text x="710" y="150" font-size="9" text-anchor="middle" fill="#7a5b00">Live → through ACS712 →</text>
+  <text x="710" y="164" font-size="9" text-anchor="middle" fill="#7a5b00">splits to 5 relay COM terminals</text>
+
+  <rect x="600" y="210" width="220" height="50" rx="6" fill="#f8f9fa" stroke="#868e96" stroke-width="1.2"/>
+  <text x="710" y="230" font-size="11" text-anchor="middle" fill="#333333">Light 1 (15W)</text>
+  <text x="710" y="246" font-size="9" text-anchor="middle" fill="#777777">Relay NO1 → Light1 → Neutral</text>
+
+  <rect x="600" y="270" width="220" height="50" rx="6" fill="#f8f9fa" stroke="#868e96" stroke-width="1.2"/>
+  <text x="710" y="290" font-size="11" text-anchor="middle" fill="#333333">Light 2 (15W)</text>
+  <text x="710" y="306" font-size="9" text-anchor="middle" fill="#777777">Relay NO2 → Light2 → Neutral</text>
+
+  <rect x="600" y="330" width="220" height="50" rx="6" fill="#f8f9fa" stroke="#868e96" stroke-width="1.2"/>
+  <text x="710" y="350" font-size="11" text-anchor="middle" fill="#333333">Light 3 (15W)</text>
+  <text x="710" y="366" font-size="9" text-anchor="middle" fill="#777777">Relay NO3 → Light3 → Neutral</text>
+
+  <rect x="600" y="390" width="220" height="50" rx="6" fill="#f8f9fa" stroke="#868e96" stroke-width="1.2"/>
+  <text x="710" y="410" font-size="11" text-anchor="middle" fill="#333333">Fan 1 (60W)</text>
+  <text x="710" y="426" font-size="9" text-anchor="middle" fill="#777777">Relay NO4 → Fan1 → Neutral</text>
+
+  <rect x="600" y="450" width="220" height="50" rx="6" fill="#f8f9fa" stroke="#868e96" stroke-width="1.2"/>
+  <text x="710" y="470" font-size="11" text-anchor="middle" fill="#333333">Fan 2 (60W)</text>
+  <text x="710" y="486" font-size="9" text-anchor="middle" fill="#777777">Relay NO5 → Fan2 → Neutral</text>
+
+  <text x="710" y="520" font-size="9" text-anchor="middle" fill="#555555">Neutral wires are common/unswitched,</text>
+  <text x="710" y="534" font-size="9" text-anchor="middle" fill="#555555">bussed back to the mains neutral bar.</text>
+
+  <!-- ============ CONNECTION LINES ============ -->
+  <!-- ESP32 GPIOs to Relay INs -->
+  <line x1="240" y1="250" x2="330" y2="258" stroke="#e03131" stroke-width="1.5"/>
+  <line x1="240" y1="268" x2="330" y2="276" stroke="#e03131" stroke-width="1.5"/>
+  <line x1="240" y1="286" x2="330" y2="294" stroke="#e03131" stroke-width="1.5"/>
+  <line x1="240" y1="304" x2="330" y2="312" stroke="#e03131" stroke-width="1.5"/>
+  <line x1="240" y1="322" x2="330" y2="330" stroke="#e03131" stroke-width="1.5"/>
+  <!-- ESP32 5V/GND to relay VCC/GND -->
+  <line x1="240" y1="195" x2="330" y2="212" stroke="#3b5bdb" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <line x1="240" y1="215" x2="330" y2="228" stroke="#3b5bdb" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <!-- ESP32 5V/GND to ACS712 -->
+  <line x1="240" y1="195" x2="330" y2="484" stroke="#3b5bdb" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <line x1="240" y1="215" x2="330" y2="500" stroke="#3b5bdb" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <!-- ACS712 OUT to ESP32 GPIO34 -->
+  <path d="M 330 516 C 280 516, 260 400, 240 358" stroke="#2f9e44" stroke-width="1.5" fill="none"/>
+  <!-- Relay outputs to loads -->
+  <line x1="520" y1="258" x2="600" y2="235" stroke="#e0a800" stroke-width="1.5"/>
+  <line x1="520" y1="276" x2="600" y2="295" stroke="#e0a800" stroke-width="1.5"/>
+  <line x1="520" y1="294" x2="600" y2="355" stroke="#e0a800" stroke-width="1.5"/>
+  <line x1="520" y1="312" x2="600" y2="415" stroke="#e0a800" stroke-width="1.5"/>
+  <line x1="520" y1="330" x2="600" y2="475" stroke="#e0a800" stroke-width="1.5"/>
+  <!-- Mains to ACS712 to relay COM -->
+  <path d="M 600 145 C 500 145, 500 480, 520 484" stroke="#e0a800" stroke-width="1.5" fill="none"/>
+  <text x="500" y="140" font-size="9" fill="#7a5b00">Mains LIVE routed</text>
+  <text x="500" y="152" font-size="9" fill="#7a5b00">through ACS712 first</text>
+
+  <!-- ============ PIN MAPPING TABLE ============ -->
+  <text x="70" y="600" font-size="15" font-weight="bold" fill="#1a1a1a">Pin-Mapping Table</text>
+  <rect x="70" y="612" width="1160" height="180" fill="#fafafa" stroke="#cccccc" stroke-width="1"/>
+  <!-- header row -->
+  <rect x="70" y="612" width="1160" height="26" fill="#e9ecef"/>
+  <text x="85" y="630" font-size="10.5" font-weight="bold" fill="#222222">ESP32 Pin</text>
+  <text x="245" y="630" font-size="10.5" font-weight="bold" fill="#222222">Connected To</text>
+  <text x="470" y="630" font-size="10.5" font-weight="bold" fill="#222222">Signal Type</text>
+  <text x="640" y="630" font-size="10.5" font-weight="bold" fill="#222222">Controls / Reads</text>
+  <text x="880" y="630" font-size="10.5" font-weight="bold" fill="#222222">Notes</text>
+
+  <!-- rows -->
+  <text x="85" y="654" font-size="10" fill="#333333">GPIO23</text>
+  <text x="245" y="654" font-size="10" fill="#333333">Relay Module IN1</text>
+  <text x="470" y="654" font-size="10" fill="#333333">Digital OUT</text>
+  <text x="640" y="654" font-size="10" fill="#333333">Light 1 (15W)</text>
+  <text x="880" y="654" font-size="10" fill="#333333">Active-LOW relay: LOW = ON</text>
+
+  <line x1="70" y1="662" x2="1230" y2="662" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="85" y="678" font-size="10" fill="#333333">GPIO22</text>
+  <text x="245" y="678" font-size="10" fill="#333333">Relay Module IN2</text>
+  <text x="470" y="678" font-size="10" fill="#333333">Digital OUT</text>
+  <text x="640" y="678" font-size="10" fill="#333333">Light 2 (15W)</text>
+  <text x="880" y="678" font-size="10" fill="#333333">Same relay channel type as IN1</text>
+
+  <line x1="70" y1="686" x2="1230" y2="686" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="85" y="702" font-size="10" fill="#333333">GPIO21</text>
+  <text x="245" y="702" font-size="10" fill="#333333">Relay Module IN3</text>
+  <text x="470" y="702" font-size="10" fill="#333333">Digital OUT</text>
+  <text x="640" y="702" font-size="10" fill="#333333">Light 3 (15W)</text>
+  <text x="880" y="702" font-size="10" fill="#333333">Same relay channel type as IN1</text>
+
+  <line x1="70" y1="710" x2="1230" y2="710" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="85" y="726" font-size="10" fill="#333333">GPIO19</text>
+  <text x="245" y="726" font-size="10" fill="#333333">Relay Module IN4</text>
+  <text x="470" y="726" font-size="10" fill="#333333">Digital OUT</text>
+  <text x="640" y="726" font-size="10" fill="#333333">Fan 1 (60W)</text>
+  <text x="880" y="726" font-size="10" fill="#333333">Fan is inductive load; relay must be rated for it</text>
+
+  <line x1="70" y1="734" x2="1230" y2="734" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="85" y="750" font-size="10" fill="#333333">GPIO18</text>
+  <text x="245" y="750" font-size="10" fill="#333333">Relay Module IN5</text>
+  <text x="470" y="750" font-size="10" fill="#333333">Digital OUT</text>
+  <text x="640" y="750" font-size="10" fill="#333333">Fan 2 (60W)</text>
+  <text x="880" y="750" font-size="10" fill="#333333">Fan is inductive load; relay must be rated for it</text>
+
+  <line x1="70" y1="758" x2="1230" y2="758" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="85" y="774" font-size="10" fill="#333333">GPIO34 (ADC1_CH6)</text>
+  <text x="245" y="774" font-size="10" fill="#333333">ACS712 OUT pin</text>
+  <text x="470" y="774" font-size="10" fill="#333333">Analog IN</text>
+  <text x="640" y="774" font-size="10" fill="#333333">Room total current draw</text>
+  <text x="880" y="774" font-size="10" fill="#333333">Input-only pin; ADC1 works with Wi-Fi active</text>
+
+  <!-- ============ POWER / GROUND ROW ============ -->
+  <rect x="70" y="792" width="1160" height="70" fill="#f1f3f5" stroke="#cccccc" stroke-width="1"/>
+  <text x="85" y="812" font-size="10.5" font-weight="bold" fill="#222222">Power &amp; Ground</text>
+  <text x="85" y="830" font-size="9.5" fill="#333333">ESP32 5V(VIN) → Relay Module VCC, ACS712 VCC</text>
+  <text x="85" y="846" font-size="9.5" fill="#333333">ESP32 GND → Relay Module GND, ACS712 GND (common ground, required for clean analog reading)</text>
+
+  <!-- ============ CONNECTION LIST / SAFETY ============ -->
+  <text x="70" y="895" font-size="13" font-weight="bold" fill="#1a1a1a">Connection List (logic side, low voltage)</text>
+  <text x="70" y="913" font-size="9.5" fill="#333333">1. ESP32 5V → Relay VCC and ACS712 VCC   2. ESP32 GND → Relay GND and ACS712 GND (shared ground)</text>
+  <text x="70" y="928" font-size="9.5" fill="#333333">3. GPIO23/22/21/19/18 → Relay IN1–IN5 (one GPIO per load)   4. ACS712 OUT → GPIO34 (ADC1, safe to read with Wi-Fi on)</text>
+  <text x="70" y="943" font-size="9.5" fill="#c92a2a" font-weight="bold">Mains side (110/220V): ACS712 in series with room LIVE feed; each relay COM/NO in series with one load's LIVE wire; Neutral is common/unswitched. Mains wiring is for licensed personnel — this is a concept schematic only, no real hardware required.</text>
+  <text x="70" y="960" font-size="9.5" fill="#555555">Same pattern repeats per room (3× this circuit) — 15 relay channels and up to 3 ACS712 sensors total across the office.</text>
+</svg>
