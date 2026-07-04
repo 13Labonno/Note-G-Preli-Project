@@ -27,8 +27,8 @@ DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN_HERE
 
 
 
-### 1. Launching Backend API & Telemetry Simulator
-The server starts the API endpoints alongside an automated generation engine that shifts appliance runtime records dynamically.
+## 1. Launching Backend API & Telemetry Simulator
+
 # Navigate into the backend terminal node
 cd backend
 
