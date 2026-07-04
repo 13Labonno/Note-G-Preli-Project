@@ -1,11 +1,11 @@
 # Note-G-Preli-Project
-# ⚡ Smart Office Energy Tracker & Bot
+# Smart Office Energy Tracker & Bot
 
 An automated ecosystem designed to monitor and optimize office power consumption across multiple workspace rooms. The architecture bridges physical or simulated hardware layers with a centralized server, a real-time analytics web dashboard, and a conversational Discord Bot acting as an eco-friendly automated property supervisor.
 
 ---
 
-## 🏗️ System Architecture & Workflow
+##  System Architecture & Workflow
 
 The entire platform functions using a single backend service acting as the unified **Single Source of Truth**.
 
@@ -14,9 +14,10 @@ The entire platform functions using a single backend service acting as the unifi
 3. **Web Interface:** A visual dashboard that renders real-time state metrics without browser page updates.
 4. **Discord Bot:** A management interface providing contextual room diagnostics leveraging an automated Large Language Model (LLM) processor.
 
+## Live demo and simulation link: https://youtu.be/lbjDgq7dtiM?si=1ZvlAmQe-taYlN91
+## code demonstra. : https://youtu.be/JP75tjRp2JY?si=aD16tesf6_dOTBrt
 
-
-## 🛠️ Project Setup & Installation
+##  Project Setup & Installation
 
 ### Prerequisite Environment Configuration
 Create a `.env` file inside the root of your project directory before initializing execution modules:
