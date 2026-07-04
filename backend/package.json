@@ -1,0 +1,11 @@
+{
+  "name": "office-iot-backend",
+  "version": "1.0.0",
+  "description": "Backend API and Simulator for Office IoT",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "ws": "^8.16.0"
+  }
+}
