@@ -14,18 +14,7 @@ The entire platform functions using a single backend service acting as the unifi
 3. **Web Interface:** A visual dashboard that renders real-time state metrics without browser page updates.
 4. **Discord Bot:** A management interface providing contextual room diagnostics leveraging an automated Large Language Model (LLM) processor.
 
----
 
-## 📊 Evaluation Criteria & Weights
-- **Working Web Dashboard with Real-Time Core Pipelines:** 20%
-- **Simulated Hardware Circuits & Wiring Schematics:** 15%
-- **Dynamic Simulated Telemetry Data Quality:** 15%
-- **High-Level Data Flow Architectural Diagrams:** 15%
-- **Well-Structured Codebase, Documentation & Commit History:** 15%
-- **Interactive Discord Bot & LLM Real Data Delivery:** 10%
-- **Dashboard UI Design & Interactive Floorplan UX:** 10%
-
----
 
 ## 🛠️ Project Setup & Installation
 
